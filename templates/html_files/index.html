@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+<link rel="stylesheet" href="{% static 'css_files/app.css' %}">
+</head>
+<body>
+<h1>Employment details</h1>  
+<table>
+    {% if my_data %}
+    <thead>
+        <th>HID</th>
+        <th>HNAME</th>
+        <th>Contact</th>
+        <th>Salary</th>
+        <th>Address</th>
+    </thead>
+    {% for val in my_data %}
+    <tr>
+        <td>{{val.hid}}</td>
+        <td>{{val.hname}}</td>
+        <td>{{val.contact}}</td>
+        <td>{{val.salary}}</td>
+        <td>{{val.address}}</td>
+    </tr>
+    {% endfor %}
+</table> 
+{% else %}
+<h2>No records found</h2>
+{% endif %} 
+
+</body>
+</html>
